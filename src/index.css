@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cores do tema - Background branco (restante do site) */
+    --background: 0 0% 100%; /* Branco */
+    --foreground: 0 0% 0%; /* Texto preto */
+    --card: 0 0% 100%; /* Cards brancos */
+    --card-foreground: 0 0% 0%; /* Texto dos cards preto */
+    --popover: 0 0% 100%; /* Popovers brancos */
+    --popover-foreground: 0 0% 0%; /* Texto dos popovers preto */
+    --primary: 0 0% 0%; /* Primary preto */
+    --primary-foreground: 0 0% 100%; /* Texto sobre primary branco */
+    --secondary: 0 0% 100%; /* Secundária branco */
+    --secondary-foreground: 0 0% 0%; /* Texto sobre secundária preto */
+    --muted: 38 50% 95%; /* Muted bege claro */
+    --muted-foreground: 0 0% 30%; /* Texto muted cinza escuro */
+    --accent: 38 50% 95%; /* Accent bege claro */
+    --accent-foreground: 0 0% 0%; /* Texto accent preto */
+    --destructive: 0 84.2% 60.2%; /* Destrutivo vermelho */
+    --destructive-foreground: 0 0% 100%; /* Texto destrutivo branco */
+    --border: 38 30% 85%; /* Bordas bege médio */
+    --input: 38 30% 85%; /* Inputs bege médio */
+    --ring: 0 0% 0%; /* Ring preto */
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* Mantém o mesmo tema mesmo no dark mode */
+    --background: 38 100% 92%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 38 50% 95%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 38 50% 95%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 30% 85%;
+    --input: 38 30% 85%;
+    --ring: 0 0% 0%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Aplicar Montserrat Alternates em títulos e elementos específicos */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+}
+
