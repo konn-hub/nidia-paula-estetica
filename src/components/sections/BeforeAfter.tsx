@@ -255,7 +255,7 @@ export function BeforeAfter() {
             className="w-[90%] lg:w-auto lg:max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:opacity-90 active:opacity-80"
             style={{ backgroundColor: '#E59D0D' }}
           >
-            Chamar no WhatsApp
+            Quero agendar agora
           </a>
         </div>
       </div>

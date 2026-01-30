@@ -85,7 +85,7 @@ export function Hero() {
                   <p className="font-alt font-medium text-sm md:text-base lg:text-base leading-relaxed text-center" style={{ color: '#553800' }}>
                     Transformando vidas e
                     <br />
-                    realançando sua beleza
+                    realçando sua beleza
                   </p>
                 </div>
               </div>
