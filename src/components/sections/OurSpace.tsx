@@ -206,8 +206,8 @@ export function OurSpace() {
                 </div>
               </div>
 
-              {/* Botão "Abrir no Maps" */}
-              <div className="flex justify-center lg:justify-start mt-6 lg:mt-6 mb-6 lg:mb-0">
+              {/* Botões: Abrir no Maps + Agendar agora */}
+              <div className="flex flex-col items-center lg:items-start gap-4 mt-6 lg:mt-6 mb-6 lg:mb-0">
                 <button
                   onClick={handleOpenMaps}
                   className="w-full lg:w-full max-w-[340px] lg:max-w-none rounded-full py-3 px-6 bg-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-foreground/5 active:bg-foreground/10"
@@ -219,6 +219,17 @@ export function OurSpace() {
                     Abrir no Maps
                   </span>
                 </button>
+                <div className="flex justify-center lg:justify-start w-full">
+                  <button
+                    onClick={() => window.open('https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!', '_blank')}
+                    className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+                    style={{ borderColor: '#553800' }}
+                  >
+                    <span className="font-alt font-semibold text-[18px] leading-[100%] text-center" style={{ color: '#553800' }}>
+                      Agendar agora
+                    </span>
+                  </button>
+                </div>
               </div>
 
               {/* Preview do Mapa */}

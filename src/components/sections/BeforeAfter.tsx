@@ -245,6 +245,19 @@ export function BeforeAfter() {
             <BeforeAfterSlider key={item.id} item={item} />
           ))}
         </div>
+
+        {/* Botão CTA - igual à área Pós operatório */}
+        <div className="flex justify-center mt-10 md:mt-12 lg:mt-14">
+          <a
+            href="https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-[90%] lg:w-auto lg:max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:opacity-90 active:opacity-80"
+            style={{ backgroundColor: '#E59D0D' }}
+          >
+            Chamar no WhatsApp
+          </a>
+        </div>
       </div>
     </section>
   )

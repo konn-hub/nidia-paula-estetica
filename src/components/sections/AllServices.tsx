@@ -196,12 +196,24 @@ export function AllServices() {
                     <ChevronDown className="w-5 h-5 text-[#E59D0D]" />
                   )}
                 </div>
+
+                {/* Botão Agendar agora - igual à área Como agendar */}
+                <div className="flex justify-center w-full mt-6 md:mt-8">
+                  <button
+                    onClick={() => window.open('https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!', '_blank')}
+                    className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+                    style={{ borderColor: '#553800' }}
+                  >
+                    <span className="font-alt font-semibold text-[18px] leading-[100%] text-center" style={{ color: '#553800' }}>
+                      Agendar agora
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Coluna Direita - Imagens sobrepostas (apenas desktop) */}
-            <div className="hidden lg:block lg:relative lg:w-full lg:min-h-[560px] lg:mt-8">
-              {/* Wrapper sticky para manter o conjunto de imagens estável ao rolar/expandir */}
+            <div className="hidden lg:block lg:relative lg:w-full lg:min-h-[560px] lg:mt-8 lg:min-w-0">
               <div className="lg:sticky lg:top-[calc(50vh-240px)] lg:flex lg:justify-center lg:items-center">
                 <div className="lg:relative lg:w-full lg:max-w-[640px] lg:h-[560px] lg:overflow-visible">
                   {imageError ? (
@@ -215,20 +227,15 @@ export function AllServices() {
                         src="/img/todo-servico-2.jpg"
                         alt="Serviços estéticos - referência"
                         className="hidden lg:block lg:absolute lg:right-0 lg:top-0 lg:w-[52%] lg:h-[85%] lg:rounded-[32px] lg:overflow-hidden lg:rotate-[6deg] lg:shadow-lg lg:object-cover lg:z-10"
-                        style={{
-                          objectPosition: '50% 12%',
-                        }}
+                        style={{ objectPosition: '50% 12%' }}
                         onError={() => setImageError(true)}
                       />
-
                       {/* Imagem da frente */}
                       <img
                         src="/img/img-todo-servico.jpg"
                         alt="Todos os nossos serviços de estética"
                         className="hidden lg:block lg:absolute lg:left-0 lg:top-10 lg:w-[52%] lg:h-[85%] lg:rounded-[32px] lg:overflow-hidden lg:rotate-[-6deg] lg:shadow-lg lg:object-cover lg:z-20"
-                        style={{
-                          objectPosition: '50% 12%',
-                        }}
+                        style={{ objectPosition: '50% 12%' }}
                         onError={() => setImageError(true)}
                       />
                     </>

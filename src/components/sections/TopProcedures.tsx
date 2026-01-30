@@ -81,10 +81,10 @@ export function TopProcedures() {
     }
   }
 
+  const scheduleUrl = 'https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!'
+
   const handleSchedule = (procedure: Procedure) => {
-    // Por enquanto, placeholder - pode ser substituído por navegação para WhatsApp
-    console.log('Agendar:', procedure.name)
-    // window.open(`https://wa.me/...?text=Gostaria de agendar ${procedure.name}`, '_blank')
+    window.open(scheduleUrl, '_blank')
   }
 
   return (
@@ -217,6 +217,19 @@ export function TopProcedures() {
                   }}
                   aria-hidden="true"
                 />
+              </button>
+            </div>
+
+            {/* Botão Agendar agora - igual à área Como agendar */}
+            <div className="flex justify-center mt-8 md:mt-10">
+              <button
+                onClick={() => window.open(scheduleUrl, '_blank')}
+                className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+                style={{ borderColor: '#553800' }}
+              >
+                <span className="font-alt font-semibold text-[18px] leading-[100%] text-center" style={{ color: '#553800' }}>
+                  Agendar agora
+                </span>
               </button>
             </div>
           </div>
