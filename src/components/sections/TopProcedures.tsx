@@ -83,7 +83,7 @@ export function TopProcedures() {
 
   const scheduleUrl = 'https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!'
 
-  const handleSchedule = (procedure: Procedure) => {
+  const handleSchedule = () => {
     window.open(scheduleUrl, '_blank')
   }
 
@@ -118,13 +118,13 @@ export function TopProcedures() {
                 <div
                   key={procedure.id}
                   className="snap-start flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] h-[400px] md:h-[450px] rounded-3xl overflow-hidden cursor-pointer group relative"
-                  onClick={() => handleSchedule(procedure)}
+                  onClick={handleSchedule}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      handleSchedule(procedure)
+                      handleSchedule()
                     }
                   }}
                   aria-label={`Agendar ${procedure.name}`}
