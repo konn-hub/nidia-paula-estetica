@@ -130,50 +130,41 @@ export function DidYouKnow() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-12 xl:px-16">
-        {/* 1) Pill "Você sabia?" */}
-        <div className="flex justify-center mb-4 lg:mb-6">
-          <span
-            className="rounded-full border px-4 py-1.5 lg:px-3 lg:py-1 font-alt text-center leading-[100%] tracking-normal text-[12px] lg:text-[13px] font-semibold"
-            style={{ borderColor: '#E59D0D', color: '#E59D0D' }}
-          >
-            Você sabia?
-          </span>
-        </div>
-
-        {/* 2) Título */}
-        <h2 className="font-alt font-semibold text-[24px] lg:text-[32px] text-center text-foreground mb-4 lg:mb-6 leading-none">
-          Também fazemos Pós Operatório
+        {/* Título */}
+        <h2 className="font-alt font-semibold text-[24px] lg:text-[32px] text-center text-foreground mb-4 lg:mb-6 leading-tight">
+          Atendimento <span className="font-alt font-semibold" style={{ color: '#553800' }}>especializado</span>
+          <br />
+          <span className="font-alt font-semibold" style={{ color: '#553800' }}>Pós-Operatório Estético</span> com <span className="font-alt font-semibold" style={{ color: '#553800' }}>cuidado</span> e <span className="font-alt font-semibold" style={{ color: '#553800' }}>segurança</span>
         </h2>
 
         {/* Grid: texto (esq) | imagens + botão (dir) no desktop. Mobile: imagem, texto, botão. */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-10">
           {/* Coluna texto (desktop esquerda) */}
           <div className="lg:order-1 mt-10 md:mt-12 lg:mt-0">
-            <h3 className="font-alt font-semibold text-[20px] lg:text-[22px] text-center lg:text-left mb-4 lg:mb-5 leading-tight" style={{ color: '#553800' }}>
-              Por que a <span className="font-alt font-semibold" style={{ color: '#553800' }}>massagem pós-operatória</span> é tão importante?
-            </h3>
-
             <div className="flex flex-col space-y-4 font-alt font-normal text-[16px] text-left leading-relaxed max-w-3xl lg:max-w-none mx-auto lg:mx-0">
               <p className="font-alt font-normal text-[16px] text-left leading-relaxed">
-                A <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>massagem pós-operatória</span> é uma etapa essencial da sua <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>recuperação</span>.
-                Ela ajuda a <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>desinchar</span>, melhora a <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>circulação</span> e deixa o pós mais{' '}
-                <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>confortável</span> e <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>seguro</span>.
+                O <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>pós-operatório estético</span> exige atenção e cuidados específicos para uma recuperação mais <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>confortável</span> e <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>segura</span>. O atendimento é realizado de forma <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>personalizada</span>, respeitando o tempo do seu corpo e a fase de <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>cicatrização</span>.
               </p>
 
+              <p className="font-alt font-normal text-[16px] text-left leading-relaxed">
+                A <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>massagem pós-operatória</span> e a <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>drenagem pós-operatória</span> auxiliam na redução de <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>inchaço</span>, melhora da <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>circulação</span> e prevenção de <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>fibroses</span>, contribuindo para uma evolução mais organizada dos <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>resultados</span>.
+              </p>
+
+              <p className="font-alt font-semibold text-[16px] text-left leading-relaxed" style={{ color: '#553800' }}>
+                <span className="font-alt font-semibold" style={{ color: '#553800' }}>Benefícios</span> do cuidado <span className="font-alt font-semibold" style={{ color: '#553800' }}>pós-operatório</span>
+              </p>
               <ul className="list-disc pl-5 space-y-2 font-alt font-normal text-[16px] text-left leading-relaxed">
-                <li>Reduz <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>inchaço</span> e <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>retenção de líquidos</span></li>
-                <li>Melhora <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>circulação</span> e o <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>aspecto da pele</span></li>
-                <li>Ajuda a prevenir <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>fibroses</span> e <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>irregularidades</span></li>
-                <li>Alivia <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>desconforto</span> e sensação de &quot;<span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>peso</span>&quot;</li>
-                <li>Acelera a <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>evolução do resultado</span></li>
+                <li><span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>Redução</span> de <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>inchaço</span> e <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>retenção de líquidos</span></li>
+                <li><span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>Estímulo</span> da <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>circulação sanguínea</span> e <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>linfática</span></li>
+                <li><span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>Auxílio</span> na <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>prevenção de fibroses</span></li>
+                <li><span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>Alívio</span> do <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>desconforto</span> e sensação de <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>peso</span></li>
               </ul>
 
               <p className="font-alt font-normal text-[16px] text-left leading-relaxed">
-                O atendimento é <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>personalizado</span>: avaliamos sua fase do pós e montamos o cuidado ideal.
-                Você pode fazer o <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>pós</span> mesmo tendo operado em outro lugar.
+                O atendimento pode ser iniciado mesmo que a cirurgia tenha sido realizada em outro local, sempre com <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>liberação médica</span>.
               </p>
               <p className="font-alt font-normal text-[16px] text-left leading-relaxed">
-                Se quiser, me chama no <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>WhatsApp</span> e eu te oriento com segurança.
+                👉 <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>Agende seu atendimento</span> e receba uma <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>orientação segura</span> para o seu <span className="font-alt font-semibold text-[16px] leading-none" style={{ color: '#553800' }}>pós-operatório</span>.
               </p>
             </div>
 
