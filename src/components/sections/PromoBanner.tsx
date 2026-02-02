@@ -1,5 +1,47 @@
 import { useInViewAnimation } from '../../lib/useInViewAnimation'
 
+/** Ícone de check nítido (igual ao primeiro print) — cor #553800, traço médio */
+function CheckIcon() {
+  return (
+    <span className="inline-flex flex-shrink-0 w-5 h-5 items-center justify-center" aria-hidden>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3 10.5L8 15.5L17 4.5"
+          stroke="#553800"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  )
+}
+
+const promoBannerStyles = {
+  topRect: {
+    backgroundColor: '#553800',
+    width: 382,
+    height: 328,
+    borderRadius: 22,
+    fontFamily: "'Montserrat Alternates', sans-serif",
+    fontWeight: 500,
+    fontSize: 32,
+    lineHeight: '100%',
+    letterSpacing: '0%',
+  },
+  bottomRect: {
+    backgroundColor: '#E59D0D',
+    width: 382,
+    height: 445,
+    borderRadius: 22,
+    fontFamily: "'Montserrat Alternates', sans-serif",
+    fontWeight: 600,
+    fontSize: 25,
+    lineHeight: '100%',
+    letterSpacing: '0%',
+  },
+}
+
 export function PromoBanner() {
   const { ref, isVisible } = useInViewAnimation()
   const handleSchedule = () => {
@@ -16,74 +58,266 @@ export function PromoBanner() {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="mx-auto px-6 md:px-0">
-        {/* Card principal */}
-        <div 
-          className="p-6 md:p-10 transition-all duration-200 hover:shadow-lg mx-auto w-full max-w-[382px] h-auto min-h-[188px] md:max-w-[1242px] md:h-[367px]"
-          style={{ 
-            background: 'linear-gradient(to right, #E59D0D, #E28400)',
-            borderRadius: '39px'
-          }}
-        >
-          {/* Conteúdo alinhado à esquerda */}
-          <div className="flex flex-col h-full justify-center">
-            {/* Linha 1: LAZER DAY */}
-            <h2 
-              className="text-white font-sans font-bold leading-none whitespace-nowrap text-[40px] md:text-[96px] mb-2 md:mb-4"
-            >
-              LAZER DAY
-            </h2>
-
-            {/* Linha 2: Clientes do site tem 5% OFF */}
-            <p 
-              className="text-white font-sans font-light leading-none whitespace-nowrap text-[20px] md:text-[48px] mb-6 md:mb-8"
-            >
-              Clientes do site tem{' '}
-              <span 
-                className="font-bold text-[20px] md:text-[48px]" 
-                style={{ color: '#553800' }}
+      <div className="flex flex-col items-center gap-4 md:gap-6 px-[29px] md:px-8">
+        {/* Mobile: empilhados. Desktop: lado a lado juntos, border-radius 22px nos 4 cantos do bloco */}
+        <div className="flex flex-col md:flex-row w-full max-w-[382px] md:max-w-[788px] gap-0 shrink-0 opacity-100 md:items-stretch">
+          {/* Quadrado esquerdo (marrom) — desktop: só cantos esquerdos arredondados */}
+          <div
+            className="flex flex-col justify-between w-full md:max-w-[382px] md:flex-1 overflow-hidden shrink-0 rounded-[22px] md:rounded-r-none md:rounded-l-[22px]"
+            style={{
+              backgroundColor: promoBannerStyles.topRect.backgroundColor,
+              minHeight: promoBannerStyles.topRect.height,
+              fontFamily: promoBannerStyles.topRect.fontFamily,
+              fontWeight: promoBannerStyles.topRect.fontWeight,
+              lineHeight: promoBannerStyles.topRect.lineHeight,
+              letterSpacing: promoBannerStyles.topRect.letterSpacing,
+            }}
+          >
+          {/* Espaçamento: mobile padrão; desktop mais generoso */}
+          <div className="flex flex-col justify-between flex-1 box-border pt-6 pr-6 pb-8 pl-6 md:pt-8 md:pr-8 md:pb-10 md:pl-8">
+            <div>
+              {/* Tag LASER DAY — maior no desktop */}
+              <span
+                className="inline-flex items-center justify-center mb-6 md:mb-8 uppercase shrink-0 w-[146px] h-10 md:w-[200px] md:h-[52px] text-xl md:text-2xl rounded-lg"
+                style={{
+                  backgroundColor: '#FFEED7',
+                  borderRadius: 9,
+                  opacity: 1,
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 700,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textAlign: 'center',
+                  color: '#553800',
+                }}
               >
-                5% OFF
+                LASER DAY
               </span>
-            </p>
-
-            {/* Botão CTA - Pill branco */}
+              {/* Título: "Um dia especial para seu laser" — 36px, #E59D0D */}
+              <p
+                className="max-w-full text-left mb-4 md:mb-6"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 36,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  color: '#E59D0D',
+                }}
+              >
+                Um dia especial
+                <br />
+                para seu laser
+              </p>
+              {/* Corpo: 15px, #FFFFFF */}
+              <p
+                className="max-w-full text-left mb-4 md:mb-5"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 15,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  color: '#FFFFFF',
+                }}
+              >
+                Todo mês abrimos uma data exclusiva para depilação a laser, entre os dias 8 e 12
+              </p>
+              {/* Oferta: "5% OFF" #E59D0D, "para clientes do site" #FFFFFF — 15px */}
+              <p
+                className="max-w-full text-left"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 15,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                }}
+              >
+                <span style={{ color: '#E59D0D' }}>5% OFF</span>{' '}
+                <span style={{ color: '#FFFFFF' }}>para clientes do site</span>
+              </p>
+            </div>
+            {/* CTA: espaço moderado acima; desktop mais generoso */}
             <button
               onClick={handleSchedule}
-              className="group relative w-full max-w-[280px] md:max-w-md h-14 bg-white rounded-full flex items-center pl-5 md:pl-6 pr-14 md:pr-20 transition-all duration-200 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#E59D0D]"
-              aria-label="Agendar agora com promoção"
+              className="flex items-center justify-center gap-2 w-fit hover:opacity-90 transition-opacity mt-6 md:mt-8"
+              style={{
+                color: 'rgba(255, 255, 255, 0.95)',
+                fontFamily: "'Montserrat Alternates', sans-serif",
+                fontWeight: 600,
+                fontSize: 14,
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                textAlign: 'center',
+              }}
+              aria-label="Agendar agora"
             >
-              {/* Texto alinhado à esquerda */}
-              <span 
-                className="font-alt font-extrabold leading-none whitespace-nowrap text-[14px] md:text-[24px]"
-                style={{ color: '#E59D0D' }}
-              >
-                Agendar agora
-              </span>
-
-              {/* Círculo end cap com seta à direita */}
-              <div 
-                className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 w-11 h-11 md:w-12 md:h-12 rounded-full border-[3px] border-white flex items-center justify-center transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-[calc(50%+2px)]"
-                style={{ backgroundColor: '#E59D0D' }}
-              >
-                <svg
-                  className="w-4 h-4 md:w-4 md:h-4"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 12L12 4M12 4H6M12 4V10"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              <img
+                src="/img/icone-calendario.png"
+                alt=""
+                className="w-5 h-5 object-contain flex-shrink-0 brightness-0 invert opacity-95"
+              />
+              <span>Agendar agora</span>
             </button>
           </div>
         </div>
+
+          {/* Quadrado direito (laranja) — desktop: borda à esquerda (meio) + só cantos direitos arredondados */}
+          <div
+            className="flex flex-col w-full md:max-w-[382px] md:flex-1 overflow-hidden shrink-0 rounded-[22px] md:rounded-l-none md:rounded-r-[22px] md:border-l md:border-l-2 md:border-white/40"
+            style={{
+              backgroundColor: promoBannerStyles.bottomRect.backgroundColor,
+              minHeight: promoBannerStyles.bottomRect.height,
+            }}
+          >
+          {/* Área laranja: título, parágrafo, lista — espaçamento e palavras em destaque */}
+          <div className="flex flex-col flex-1 p-6 pb-5">
+            <h2
+              className="text-left mb-5"
+              style={{
+                fontFamily: "'Montserrat Alternates', sans-serif",
+                fontWeight: 600,
+                fontSize: 25,
+                lineHeight: '100%',
+                letterSpacing: '0%',
+              }}
+            >
+              <span style={{ color: '#FFFFFF' }}>Depilação a laser</span>
+              <span style={{ color: '#553800' }}> sem pacote</span>
+              <span style={{ color: '#FFFFFF' }}> e</span>
+              <span style={{ color: '#553800' }}> sem susto no cartão</span>
+            </h2>
+            <p
+              className="text-left mb-5"
+              style={{
+                fontFamily: "'Montserrat Alternates', sans-serif",
+                fontWeight: 500,
+                fontSize: 16,
+                lineHeight: '1.4',
+                letterSpacing: '0%',
+                color: '#FFFFFF',
+              }}
+            >
+              Você paga por sessão, sem fechar pacote.{' '}
+              <strong style={{ fontWeight: 600 }}>Laser Day</strong> entre os dias{' '}
+              <strong style={{ fontWeight: 600 }}>8 e 12</strong>,{' '}
+              <strong style={{ fontWeight: 600 }}>7h às 21h</strong>, com agenda exclusiva para laser.
+            </p>
+            <ul className="space-y-2.5 list-none">
+              <li
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 16,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  color: '#553800',
+                }}
+              >
+                <CheckIcon />
+                <span><strong style={{ fontWeight: 600 }}>Pague</strong> por sessão</span>
+              </li>
+              <li
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 16,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  color: '#553800',
+                }}
+              >
+                <CheckIcon />
+                <span><strong style={{ fontWeight: 600 }}>Sem pacote</strong> obrigatório</span>
+              </li>
+              <li
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 16,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  color: '#553800',
+                }}
+              >
+                <CheckIcon />
+                <span><strong style={{ fontWeight: 600 }}>Data exclusiva</strong> entre os dias 8 e 12</span>
+              </li>
+              <li
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 16,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  color: '#553800',
+                }}
+              >
+                <CheckIcon />
+                <span><strong style={{ fontWeight: 600 }}>Horários</strong> de 7h até 21h</span>
+              </li>
+              <li
+                className="flex items-center gap-2"
+                style={{
+                  fontFamily: "'Montserrat Alternates', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 16,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  color: '#553800',
+                }}
+              >
+                <CheckIcon />
+                <span><strong style={{ fontWeight: 600 }}>Ideal</strong> para quem quer conhecer o tratamento</span>
+              </li>
+            </ul>
+          </div>
+          {/* Rodapé marrom: "Atendimentos com horário agendado" */}
+          <button
+            type="button"
+            onClick={handleSchedule}
+            className="w-full flex items-center justify-center gap-2 py-4 px-5 transition-opacity hover:opacity-90"
+            style={{
+              backgroundColor: '#553800',
+              fontFamily: "'Montserrat Alternates', sans-serif",
+              fontWeight: 500,
+              fontSize: 13,
+              lineHeight: '100%',
+              letterSpacing: '0%',
+              textAlign: 'center',
+              color: '#FFFFFF',
+            }}
+            aria-label="Atendimentos com horário agendado"
+          >
+            <img
+              src="/img/icone-calendario.png"
+              alt=""
+              className="w-5 h-5 object-contain brightness-0 invert flex-shrink-0"
+            />
+            <span>Atendimentos com horário agendado</span>
+          </button>
+          </div>
+        </div>
+
+        {/* Botão centralizado abaixo dos dois quadrados (desktop) */}
+        <button
+          type="button"
+          onClick={handleSchedule}
+          className="w-full max-w-[382px] mx-auto py-4 px-6 rounded-full border-2 bg-white font-bold text-center transition-opacity hover:opacity-90"
+          style={{
+            borderColor: '#553800',
+            color: '#553800',
+            fontFamily: "'Montserrat Alternates', sans-serif",
+          }}
+          aria-label="Agendar agora"
+        >
+          Agendar agora
+        </button>
       </div>
     </section>
   )
