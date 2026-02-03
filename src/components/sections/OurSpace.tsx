@@ -1,7 +1,4 @@
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
-
 export function OurSpace() {
-  const { ref, isVisible } = useInViewAnimation()
   const handleOpenMaps = () => {
     const mapsUrl = 'https://www.google.com/maps/place/Nídia+Paula+%7C+Estética/@-16.0196151,-48.0616682,807m/data=!3m2!1e3!4b1!4m6!3m5!1s0x935981c4ebbdc887:0x7f05670b5a38e55a!8m2!3d-16.0196151!4d-48.0616682!16s%2Fg%2F11sscf4vdw?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D'
     window.open(mapsUrl, '_blank', 'noopener,noreferrer')
@@ -75,10 +72,7 @@ export function OurSpace() {
   return (
     <section
       id="espaco"
-      ref={ref}
-      className={`bg-white py-12 md:py-16 lg:py-20 lg:pt-24 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-white py-12 md:py-16 lg:py-20 lg:pt-24"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-[340px] lg:max-w-[1200px] mx-auto">
@@ -210,7 +204,7 @@ export function OurSpace() {
               <div className="flex flex-col items-center lg:items-start gap-4 mt-6 lg:mt-6 mb-6 lg:mb-0">
                 <button
                   onClick={handleOpenMaps}
-                  className="w-full lg:w-full max-w-[340px] lg:max-w-none rounded-full py-3 px-6 bg-white transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-foreground/5 active:bg-foreground/10"
+                  className="w-full lg:w-full max-w-[340px] lg:max-w-none rounded-full py-3 px-6 bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                   style={{
                     border: '2px solid #000000',
                   }}
@@ -222,7 +216,7 @@ export function OurSpace() {
                 <div className="flex justify-center lg:justify-start w-full">
                   <button
                     onClick={() => window.open('https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!', '_blank')}
-                    className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+                    className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     style={{ borderColor: '#553800' }}
                   >
                     <span className="font-alt font-semibold text-[18px] leading-[100%] text-center" style={{ color: '#553800' }}>

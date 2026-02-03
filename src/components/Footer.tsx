@@ -26,7 +26,7 @@ export function Footer() {
             <div className="flex items-center gap-[18px] md:gap-6">
               <button
                 onClick={handleWhatsApp}
-                className="transition-all hover:opacity-80 hover:scale-105 active:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f1f1f]"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f1f1f]"
                 aria-label="WhatsApp"
               >
                 <img
@@ -37,7 +37,7 @@ export function Footer() {
               </button>
               <button
                 onClick={handleInstagram}
-                className="transition-all hover:opacity-80 hover:scale-105 active:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f1f1f]"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f1f1f]"
                 aria-label="Instagram"
               >
                 <img

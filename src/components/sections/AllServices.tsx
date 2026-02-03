@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
 import { ChevronRight, ChevronDown, ChevronUp } from 'lucide-react'
 
 const services = [
@@ -35,7 +34,6 @@ const protocols = [
 export function AllServices() {
   const [isExpanded, setIsExpanded] = useState(false)
   const [imageError, setImageError] = useState(false)
-  const { ref, isVisible } = useInViewAnimation()
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded)
@@ -44,10 +42,7 @@ export function AllServices() {
   return (
     <section
       id="servicos"
-      ref={ref}
-      className={`bg-white py-8 md:py-12 lg:py-16 lg:overflow-x-hidden transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-white py-8 md:py-12 lg:py-16 lg:overflow-x-hidden"
     >
       <div className="px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Container principal - mobile centralizado, desktop com grid */}
@@ -69,10 +64,6 @@ export function AllServices() {
                     <div
                       key={index}
                       className="flex items-center gap-2 md:gap-3"
-                      style={{
-                        opacity: 1,
-                        transition: 'opacity 0.3s ease-in-out',
-                      }}
                     >
                       <ChevronRight
                         className="w-4 h-4 md:w-5 md:h-5 text-[#E59D0D] flex-shrink-0"
@@ -86,14 +77,7 @@ export function AllServices() {
 
                   {/* Item Teaser (8º item com opacity baixa quando recolhido) */}
                   {!isExpanded && services.length > 7 && (
-                    <div
-                      className="flex items-center gap-2 md:gap-3"
-                      style={{
-                        opacity: 0.35,
-                        transition: 'opacity 0.3s ease-in-out',
-                        pointerEvents: 'none',
-                      }}
-                    >
+                    <div className="flex items-center gap-2 md:gap-3 opacity-[0.35] pointer-events-none">
                       <ChevronRight
                         className="w-4 h-4 md:w-5 md:h-5 text-[#E59D0D] flex-shrink-0"
                         aria-hidden="true"
@@ -106,20 +90,11 @@ export function AllServices() {
 
                   {/* Itens adicionais (do 8º em diante) - apenas quando expandido */}
                   {isExpanded && services.length > 7 && (
-                    <div
-                      className="flex flex-col gap-3 md:gap-3.5"
-                      style={{
-                        animation: 'fadeIn 0.3s ease-in-out',
-                      }}
-                    >
+                    <div className="flex flex-col gap-3 md:gap-3.5">
                       {services.slice(7).map((service, index) => (
                         <div
                           key={index + 7}
                           className="flex items-center gap-2 md:gap-3"
-                          style={{
-                            opacity: 1,
-                            transition: 'opacity 0.3s ease-in-out',
-                          }}
                         >
                           <ChevronRight
                             className="w-4 h-4 md:w-5 md:h-5 text-[#E59D0D] flex-shrink-0"
@@ -174,17 +149,13 @@ export function AllServices() {
                   }}
                   aria-expanded={isExpanded}
                   aria-label={isExpanded ? 'Recolher serviços' : 'Expandir todos os serviços'}
-                  className="font-sans font-semibold text-[14px] text-[#E59D0D] uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded transition-all duration-200 hover:opacity-80 active:opacity-70"
-                  style={{
-                    transition: 'opacity 0.2s ease-in-out',
-                  }}
+                  className="font-sans font-semibold text-[14px] text-[#E59D0D] uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded"
                 >
                   {isExpanded ? 'RECOLHER SERVIÇOS' : 'EXPANDIR TODOS OS SERVIÇOS'}
                 </button>
 
                 {/* Ícone de Seta */}
                 <div
-                  className="transition-transform duration-300 ease-in-out"
                   style={{
                     transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
                   }}
@@ -201,7 +172,7 @@ export function AllServices() {
                 <div className="flex justify-center w-full mt-6 md:mt-8">
                   <button
                     onClick={() => window.open('https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!', '_blank')}
-                    className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+                    className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     style={{ borderColor: '#553800' }}
                   >
                     <span className="font-alt font-semibold text-[18px] leading-[100%] text-center" style={{ color: '#553800' }}>
@@ -247,27 +218,6 @@ export function AllServices() {
         </div>
       </div>
 
-      {/* Estilos para animação e reduzir movimento */}
-      <style>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-8px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-      `}</style>
     </section>
   )
 }

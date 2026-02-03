@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
 
 /** Duas imagens pós-operatório (grid lado a lado no desktop) */
 const POST_OP_IMAGES = [
@@ -9,9 +8,8 @@ const POST_OP_IMAGES = [
 
 export function DidYouKnow() {
   const [unlocked, setUnlocked] = useState(false)
-  const [isReducedMotion, setIsReducedMotion] = useState(false)
+  const [_isReducedMotion, setIsReducedMotion] = useState(false)
   const [mobileImageIndex, setMobileImageIndex] = useState(0)
-  const { ref, isVisible } = useInViewAnimation()
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -40,7 +38,7 @@ export function DidYouKnow() {
       <img
         src={item.src}
         alt={item.alt}
-        className="w-full h-full object-cover transition-all duration-300"
+        className="w-full h-full object-cover"
         style={{
           objectPosition: '50% 20%',
           filter: unlocked ? 'none' : 'blur(6px) saturate(0.6)',
@@ -49,7 +47,7 @@ export function DidYouKnow() {
       />
       {!unlocked && (
         <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background: 'rgba(248, 229, 206, 0.75)',
             backdropFilter: 'blur(6px)',
@@ -70,7 +68,7 @@ export function DidYouKnow() {
             <button
               type="button"
               onClick={goPrev}
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D]/50"
+              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D]/50"
               style={{ background: 'rgba(229, 157, 13, 0.15)', color: '#E59D0D' }}
               aria-label="Foto anterior"
             >
@@ -90,7 +88,7 @@ export function DidYouKnow() {
             <button
               type="button"
               onClick={goNext}
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D]/50"
+              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D]/50"
               style={{ background: 'rgba(229, 157, 13, 0.15)', color: '#E59D0D' }}
               aria-label="Próxima foto"
             >
@@ -123,12 +121,7 @@ export function DidYouKnow() {
   )
 
   return (
-    <section
-      ref={ref}
-      className={`overflow-x-hidden bg-white py-12 md:py-20 lg:py-24 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-    >
+    <section className="overflow-x-hidden bg-white py-12 md:py-20 lg:py-24">
       <div className="max-w-6xl mx-auto px-6 lg:px-12 xl:px-16">
         {/* Título */}
         <h2 className="font-alt font-semibold text-[24px] lg:text-[32px] text-center text-foreground mb-4 lg:mb-6 leading-tight">
@@ -174,7 +167,7 @@ export function DidYouKnow() {
                 href="https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20pós-operatório!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[90%] lg:w-auto lg:max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:opacity-90 active:opacity-80"
+                className="w-[90%] lg:w-auto lg:max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 style={{ backgroundColor: '#E59D0D' }}
               >
                 Chamar no WhatsApp
@@ -198,7 +191,7 @@ export function DidYouKnow() {
                     handleToggle()
                   }
                 }}
-                className="flex flex-col items-center gap-1 cursor-pointer transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D]/50 rounded"
+                className="flex flex-col items-center gap-1 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D]/50 rounded"
                 aria-label={unlocked ? 'Esconder fotos' : 'Ver fotos (conteúdo sensível)'}
               >
                 <span
@@ -212,7 +205,7 @@ export function DidYouKnow() {
                   alt=""
                   width={12}
                   height={12}
-                  className={`object-contain transition-transform ${isReducedMotion ? '' : 'duration-200'}`}
+                  className="object-contain"
                   style={{
                     transform: unlocked ? 'rotate(180deg)' : 'rotate(0deg)',
                     filter:
@@ -229,7 +222,7 @@ export function DidYouKnow() {
                 href="https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20pós-operatório!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:opacity-90 active:opacity-80"
+                className="w-full max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 style={{ backgroundColor: '#E59D0D' }}
               >
                 Chamar no WhatsApp

@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
-
 interface FAQItem {
   question: string
   answer: string
@@ -51,7 +49,6 @@ const faqItems: FAQItem[] = [
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const { ref, isVisible } = useInViewAnimation()
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -67,10 +64,7 @@ export function FAQ() {
   return (
     <section
       id="duvidas"
-      ref={ref}
-      className={`bg-white py-10 md:py-16 lg:py-20 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-white py-10 md:py-16 lg:py-20"
     >
       <div className="container mx-auto px-6 lg:px-8">
         {/* Container centralizado com max-width menor */}
@@ -129,7 +123,7 @@ export function FAQ() {
 
                       {/* Ícone Chevron */}
                       <svg
-                        className={`flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 text-foreground transition-transform duration-300 ${
+                        className={`flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 text-foreground ${
                           isOpen ? 'rotate-180' : ''
                         }`}
                         fill="none"
@@ -149,7 +143,7 @@ export function FAQ() {
                     {/* Resposta */}
                     <div
                       id={`faq-answer-${index}`}
-                      className={`grid transition-all duration-300 ease-in-out ${
+                      className={`grid ${
                         isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                       }`}
                     >
@@ -188,7 +182,7 @@ export function FAQ() {
             </p>
             <button
               onClick={handleWhatsApp}
-              className="w-full max-w-[280px] lg:max-w-[320px] mx-auto rounded-full py-3 lg:py-4 px-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5E6D3] hover:opacity-90 active:scale-[0.98]"
+              className="w-full max-w-[280px] lg:max-w-[320px] mx-auto rounded-full py-3 lg:py-4 px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F5E6D3]"
               style={{
                 backgroundColor: '#E59D0D',
                 color: '#FFFFFF',

@@ -45,7 +45,7 @@ export function OverlappedPhotos({
         <img
           src={rightSrc}
           alt={rightAlt}
-          className="w-full h-full object-cover transition-all duration-300"
+          className="w-full h-full object-cover"
           style={{
             objectPosition: objectPositionRight,
             filter: blurred ? 'blur(6px) saturate(0.6)' : 'none',
@@ -55,7 +55,7 @@ export function OverlappedPhotos({
         />
         {blurred && (
           <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+            className="absolute inset-0 pointer-events-none"
             style={{
               background: 'rgba(248, 229, 206, 0.75)',
               backdropFilter: 'blur(6px)',
@@ -79,7 +79,7 @@ export function OverlappedPhotos({
         <img
           src={leftSrc}
           alt={leftAlt}
-          className="w-full h-full object-cover transition-all duration-300"
+          className="w-full h-full object-cover"
           style={{
             objectPosition: objectPositionLeft,
             filter: blurred ? 'blur(6px) saturate(0.6)' : 'none',
@@ -89,7 +89,7 @@ export function OverlappedPhotos({
         />
         {blurred && (
           <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+            className="absolute inset-0 pointer-events-none"
             style={{
               background: 'rgba(248, 229, 206, 0.75)',
               backdropFilter: 'blur(6px)',

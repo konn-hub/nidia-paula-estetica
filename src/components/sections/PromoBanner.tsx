@@ -1,5 +1,3 @@
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
-
 /** Ícone de check nítido (igual ao primeiro print) — cor #553800, traço médio */
 function CheckIcon() {
   return (
@@ -43,7 +41,6 @@ const promoBannerStyles = {
 }
 
 export function PromoBanner() {
-  const { ref, isVisible } = useInViewAnimation()
   const handleSchedule = () => {
     window.open(
       'https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!',
@@ -52,12 +49,7 @@ export function PromoBanner() {
   }
 
   return (
-    <section
-      ref={ref}
-      className={`w-full bg-white py-8 md:py-12 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-    >
+    <section className="w-full bg-white py-8 md:py-12">
       <div className="flex flex-col items-center gap-4 md:gap-6 px-[29px] md:px-8">
         {/* Mobile: empilhados. Desktop: lado a lado juntos, border-radius 22px nos 4 cantos do bloco */}
         <div className="flex flex-col md:flex-row w-full max-w-[382px] md:max-w-[788px] gap-0 shrink-0 opacity-100 md:items-stretch">
@@ -250,7 +242,7 @@ export function PromoBanner() {
           <button
             type="button"
             onClick={handleSchedule}
-            className="w-full flex items-center justify-center gap-2 py-4 px-5 transition-opacity hover:opacity-90"
+            className="w-full flex items-center justify-center gap-2 py-4 px-5"
             style={{
               backgroundColor: '#553800',
               fontFamily: "'Montserrat Alternates', sans-serif",
@@ -273,11 +265,11 @@ export function PromoBanner() {
           </div>
         </div>
 
-        {/* Botão centralizado abaixo dos dois quadrados (desktop) */}
+        {/* Botão centralizado abaixo dos dois quadrados — só no mobile; desktop: oculto */}
         <button
           type="button"
           onClick={handleSchedule}
-          className="w-full max-w-[382px] mx-auto py-4 px-6 rounded-full border-2 bg-white font-bold text-center transition-opacity hover:opacity-90"
+          className="w-full max-w-[382px] mx-auto py-4 px-6 rounded-full border-2 bg-white font-bold text-center md:hidden"
           style={{
             borderColor: '#553800',
             color: '#553800',

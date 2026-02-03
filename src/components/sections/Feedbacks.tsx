@@ -1,6 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
-
 interface Review {
   id: string
   name: string
@@ -84,7 +82,6 @@ export function Feedbacks() {
   const lastScrollLeftRef = useRef(0)
   const scrollTimeoutRef = useRef<number | null>(null)
   const activeIndexTimeoutRef = useRef<number | null>(null)
-  const { ref, isVisible } = useInViewAnimation()
 
   // Detectar se é desktop
   useEffect(() => {
@@ -449,10 +446,7 @@ export function Feedbacks() {
   return (
     <section
       id="feedbacks"
-      ref={ref}
-      className={`bg-white py-8 md:py-12 lg:py-20 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-white py-8 md:py-12 lg:py-20"
     >
       <div className="px-6 md:px-8">
         {/* Título */}
@@ -467,7 +461,7 @@ export function Feedbacks() {
             onClick={scrollPrev}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-foreground/20"
+            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 rounded-full bg-white/90 shadow-md items-center justify-center focus:outline-none focus:ring-2 focus:ring-foreground/20"
             aria-label="Avaliação anterior"
           >
             <svg
@@ -484,7 +478,7 @@ export function Feedbacks() {
             onClick={scrollNext}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-foreground/20"
+            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-10 h-10 rounded-full bg-white/90 shadow-md items-center justify-center focus:outline-none focus:ring-2 focus:ring-foreground/20"
             aria-label="Próxima avaliação"
           >
             <svg
@@ -662,7 +656,7 @@ export function Feedbacks() {
             {/* Botão "Ver avaliações no Google" */}
             <button
               onClick={handleGoogleReviewsClick}
-              className="mt-5 bg-white border-2 border-black rounded-full px-6 py-3 font-alt text-center hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground/20"
+              className="mt-5 bg-white border-2 border-black rounded-full px-6 py-3 font-alt text-center focus:outline-none focus:ring-2 focus:ring-foreground/20"
               style={{
                 fontWeight: 600,
                 fontSize: '14px',
@@ -688,7 +682,7 @@ export function Feedbacks() {
           <div className="hidden lg:flex justify-center mt-6">
             <button
               onClick={handleGoogleReviewsClick}
-              className="bg-white border-2 border-black rounded-full px-6 py-3 font-alt text-center hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-foreground/20"
+              className="bg-white border-2 border-black rounded-full px-6 py-3 font-alt text-center focus:outline-none focus:ring-2 focus:ring-foreground/20"
               style={{
                 fontWeight: 600,
                 fontSize: '14px',

@@ -1,5 +1,3 @@
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
-
 const steps = [
   {
     icon: '/img/icone-whatsapp.png',
@@ -16,8 +14,6 @@ const steps = [
 ]
 
 export function HowToSchedule() {
-  const { ref, isVisible } = useInViewAnimation()
-
   const handleSchedule = () => {
     window.open(
       'https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!',
@@ -28,10 +24,7 @@ export function HowToSchedule() {
   return (
     <section
       id="agendar"
-      ref={ref}
-      className={`bg-white py-16 md:py-20 lg:py-24 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-white py-16 md:py-20 lg:py-24"
     >
       <div className="container mx-auto px-6 lg:px-16">
         <div className="max-w-[360px] lg:max-w-6xl mx-auto">
@@ -75,7 +68,7 @@ export function HowToSchedule() {
           <div className="flex justify-center mt-12 md:mt-14 lg:mt-16">
             <button
               onClick={handleSchedule}
-              className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+              className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               style={{
                 borderColor: '#553800',
               }}

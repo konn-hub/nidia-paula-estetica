@@ -82,7 +82,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-normal text-foreground hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+              className="text-sm font-normal text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
             >
               {item.label}
             </a>
@@ -119,7 +119,7 @@ export function Header() {
             id="menu-drawer"
             role="dialog"
             aria-modal="true"
-            className="lg:hidden fixed inset-y-0 right-0 z-50 w-4/5 max-w-xs bg-[#FFEED7] shadow-xl border-l border-border transform transition-transform duration-200 ease-out translate-x-0"
+            className="lg:hidden fixed inset-y-0 right-0 z-50 w-4/5 max-w-xs bg-[#FFEED7] shadow-xl border-l border-border translate-x-0"
           >
             <div className="flex items-center justify-end h-20 px-6">
               <button

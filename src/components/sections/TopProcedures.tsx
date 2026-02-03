@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
 import { Calendar, ArrowRight } from 'lucide-react'
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
 
 interface Procedure {
   id: string
@@ -42,7 +41,6 @@ export function TopProcedures() {
   const [imageLoading, setImageLoading] = useState<Set<string>>(
     new Set(procedures.map((p) => p.id))
   )
-  const { ref, isVisible } = useInViewAnimation()
 
   // Inicializa todas as imagens como loading
   useEffect(() => {
@@ -60,10 +58,7 @@ export function TopProcedures() {
 
       if (isAtEnd) {
         // Se estiver no final, volta para o início
-        container.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-        })
+        container.scrollTo({ left: 0 })
       } else {
         // Caso contrário, avança para o próximo card
         const firstCard = container.querySelector('.snap-start')
@@ -72,10 +67,7 @@ export function TopProcedures() {
           const gap = 18 // gap entre cards (gap-4 = 16px, gap-5 = 20px, usando 18px como média)
           const scrollAmount = cardWidth + gap
 
-          container.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-          })
+          container.scrollBy({ left: scrollAmount })
         }
       }
     }
@@ -90,10 +82,7 @@ export function TopProcedures() {
   return (
     <section
       id="procedimentos"
-      ref={ref}
-      className={`bg-white pt-8 md:pt-12 pb-8 md:pb-12 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-white pt-8 md:pt-12 pb-8 md:pb-12"
     >
       {/* Container padrão seguindo o mesmo padrão das outras seções */}
       <div className="container mx-auto px-6 lg:px-12 xl:px-16">
@@ -148,7 +137,7 @@ export function TopProcedures() {
                         <img
                           src={procedure.image}
                           alt={procedure.name}
-                          className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 ${
+                          className={`w-full h-full object-cover ${
                             imageLoading.has(procedure.id) ? 'opacity-0' : 'opacity-100'
                           }`}
                           loading="lazy"
@@ -190,7 +179,7 @@ export function TopProcedures() {
                   </div>
 
                   {/* Efeito de Hover - Sombra */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="absolute inset-0 pointer-events-none opacity-0" aria-hidden="true">
                     <div className="absolute inset-0 shadow-2xl rounded-3xl" />
                   </div>
                 </div>
@@ -201,7 +190,7 @@ export function TopProcedures() {
             <div className="relative mt-4 flex justify-end">
               <button
                 onClick={handleNext}
-                className="relative p-0 hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 rounded-full z-10"
+                className="relative p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 rounded-full z-10"
                 style={{
                   top: '6.13px',
                   left: '1.53px',
@@ -224,7 +213,7 @@ export function TopProcedures() {
             <div className="flex justify-center mt-8 md:mt-10">
               <button
                 onClick={() => window.open(scheduleUrl, '_blank')}
-                className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white hover:bg-[#553800]/10 active:bg-[#553800]/20"
+                className="w-full max-w-[320px] lg:w-[280px] lg:max-w-none h-12 md:h-14 rounded-full border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#553800] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 style={{ borderColor: '#553800' }}
               >
                 <span className="font-alt font-semibold text-[18px] leading-[100%] text-center" style={{ color: '#553800' }}>

@@ -1,6 +1,6 @@
 import './App.css'
 import { Header } from '@/components/Header'
-import { ScrollSection } from '@/components/ScrollSection'
+import { AnimatedSection } from '@/components/AnimatedSection'
 import { Hero } from '@/components/sections/Hero'
 import { TopProcedures } from '@/components/sections/TopProcedures'
 import { PromoBanner } from '@/components/sections/PromoBanner'
@@ -18,39 +18,39 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <ScrollSection>
+      <AnimatedSection>
         <Hero />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <TopProcedures />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <PromoBanner />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <AllServices />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <DidYouKnow />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <WhoAttends />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <BeforeAfter />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <HowToSchedule />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <Feedbacks />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <OurSpace />
-      </ScrollSection>
-      <ScrollSection>
+      </AnimatedSection>
+      <AnimatedSection>
         <FAQ />
-      </ScrollSection>
+      </AnimatedSection>
       <Footer />
     </div>
   )

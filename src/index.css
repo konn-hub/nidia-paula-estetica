@@ -66,7 +66,7 @@
     @apply border-border;
   }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
   body {
     @apply bg-background text-foreground;
@@ -76,6 +76,49 @@
   /* Aplicar Montserrat Alternates em títulos e elementos específicos */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+  /* Botões e CTAs: área de toque adequada no mobile e sem delay de 300ms ao rolar */
+  button,
+  a[href].rounded-full,
+  [role="button"],
+  a[href][style*="background"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    button:not(.no-min-touch),
+    a.rounded-full:not(.no-min-touch),
+    [role="button"]:not(.no-min-touch) {
+      min-height: 44px;
+    }
+  }
+}
+
+/* Animações leves ao entrar na viewport (apenas nas seções, não no menu/footer) */
+@layer utilities {
+  .section-anim {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
+  }
+  .section-anim.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .section-anim {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+    .section-anim.is-visible {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 

@@ -1,15 +1,8 @@
-import { useInViewAnimation } from '../../lib/useInViewAnimation'
-
 export function Hero() {
-  const { ref, isVisible } = useInViewAnimation()
-
   return (
     <section
       id="hero"
-      ref={ref}
-      className={`bg-[#FFEED7] pt-4 md:pt-14 lg:pt-20 pb-10 md:pb-16 transition-all duration-700 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      className="bg-[#FFEED7] pt-4 md:pt-14 lg:pt-20 pb-10 md:pb-16"
     >
       <div className="container mx-auto px-6 lg:px-12 xl:px-16">
         <div className="max-w-md mx-auto lg:max-w-7xl">
@@ -56,7 +49,7 @@ export function Hero() {
                   href="https://api.whatsapp.com/send?phone=5561985464083&text=Olá%20*Nídia%20Paula*%20desejo%20agendar%20meu%20procedimento!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-[90%] lg:w-auto lg:max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:opacity-90 active:opacity-80"
+                  className="w-[90%] lg:w-auto lg:max-w-[360px] lg:px-8 lg:py-3 lg:text-lg rounded-full py-4 px-6 text-white font-alt font-semibold text-base md:text-lg text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E59D0D] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   style={{ backgroundColor: '#E59D0D' }}
                 >
                   Agendar agora
