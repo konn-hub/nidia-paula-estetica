@@ -121,7 +121,7 @@ export function PromoBanner() {
                   color: '#FFFFFF',
                 }}
               >
-                Todo mês abrimos uma data exclusiva para depilação a laser, entre os dias 8 e 12
+                Todo mês abrimos uma data exclusiva para depilação a laser
               </p>
               {/* Oferta: "5% OFF" #E59D0D, "para clientes do site" #FFFFFF — 15px */}
               <p
@@ -199,10 +199,7 @@ export function PromoBanner() {
                 color: '#FFFFFF',
               }}
             >
-              Você paga por sessão, sem fechar pacote.{' '}
-              <strong style={{ fontWeight: 600 }}>Laser Day</strong> entre os dias{' '}
-              <strong style={{ fontWeight: 600 }}>8 e 12</strong>,{' '}
-              <strong style={{ fontWeight: 600 }}>7h às 21h</strong>, com agenda exclusiva para laser.
+              Você paga por sessão, sem fechar pacote. Com agenda exclusiva para laser.
             </p>
             <ul className="space-y-2.5 list-none">
               <li
@@ -217,7 +214,7 @@ export function PromoBanner() {
                 }}
               >
                 <CheckIcon />
-                <span><strong style={{ fontWeight: 600 }}>Pague</strong> por sessão</span>
+                <span>Pague por sessão</span>
               </li>
               <li
                 className="flex items-center gap-2"
@@ -231,7 +228,7 @@ export function PromoBanner() {
                 }}
               >
                 <CheckIcon />
-                <span><strong style={{ fontWeight: 600 }}>Sem pacote</strong> obrigatório</span>
+                <span>Sem pacote obrigatório</span>
               </li>
               <li
                 className="flex items-center gap-2"
@@ -245,35 +242,7 @@ export function PromoBanner() {
                 }}
               >
                 <CheckIcon />
-                <span><strong style={{ fontWeight: 600 }}>Data exclusiva</strong> entre os dias 8 e 12</span>
-              </li>
-              <li
-                className="flex items-center gap-2"
-                style={{
-                  fontFamily: "'Montserrat Alternates', sans-serif",
-                  fontWeight: 500,
-                  fontSize: 16,
-                  lineHeight: '30px',
-                  letterSpacing: '0%',
-                  color: '#553800',
-                }}
-              >
-                <CheckIcon />
-                <span><strong style={{ fontWeight: 600 }}>Horários</strong> de 7h até 21h</span>
-              </li>
-              <li
-                className="flex items-center gap-2"
-                style={{
-                  fontFamily: "'Montserrat Alternates', sans-serif",
-                  fontWeight: 500,
-                  fontSize: 16,
-                  lineHeight: '30px',
-                  letterSpacing: '0%',
-                  color: '#553800',
-                }}
-              >
-                <CheckIcon />
-                <span><strong style={{ fontWeight: 600 }}>Ideal</strong> para quem quer conhecer o tratamento</span>
+                <span>Ideal para quem quer conhecer o tratamento</span>
               </li>
             </ul>
           </div>

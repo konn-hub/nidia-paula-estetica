@@ -1,5 +1,6 @@
 import './App.css'
 import { Header } from '@/components/Header'
+import { ScrollSection } from '@/components/ScrollSection'
 import { Hero } from '@/components/sections/Hero'
 import { TopProcedures } from '@/components/sections/TopProcedures'
 import { PromoBanner } from '@/components/sections/PromoBanner'
@@ -17,17 +18,39 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <Hero />
-      <TopProcedures />
-      <PromoBanner />
-      <AllServices />
-      <DidYouKnow />
-      <WhoAttends />
-      <BeforeAfter />
-      <HowToSchedule />
-      <Feedbacks />
-      <OurSpace />
-      <FAQ />
+      <ScrollSection>
+        <Hero />
+      </ScrollSection>
+      <ScrollSection>
+        <TopProcedures />
+      </ScrollSection>
+      <ScrollSection>
+        <PromoBanner />
+      </ScrollSection>
+      <ScrollSection>
+        <AllServices />
+      </ScrollSection>
+      <ScrollSection>
+        <DidYouKnow />
+      </ScrollSection>
+      <ScrollSection>
+        <WhoAttends />
+      </ScrollSection>
+      <ScrollSection>
+        <BeforeAfter />
+      </ScrollSection>
+      <ScrollSection>
+        <HowToSchedule />
+      </ScrollSection>
+      <ScrollSection>
+        <Feedbacks />
+      </ScrollSection>
+      <ScrollSection>
+        <OurSpace />
+      </ScrollSection>
+      <ScrollSection>
+        <FAQ />
+      </ScrollSection>
       <Footer />
     </div>
   )
